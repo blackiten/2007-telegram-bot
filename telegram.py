@@ -21,7 +21,7 @@ def welcome(message):
 
     markup.add(item1, item2, item3)
 
-    bot.send_message(message.chat.id, "Приветик, <b>{0.first_name}</b>! \nЯ бот, посвященный нулевым =)\nЯ могу сгенерировать тебе случайный никнейм или статус~~".format(message.from_user, bot.get_me()), parse_mode='html', reply_markup=markup)
+    bot.send_message(message.chat.id, "Приветик, <b>{0.first_name}</b>! \nЯ бот, посвященный нулевым =)\nЯ могу сгенерировать тебе случайный никнейм, статус или аву~~".format(message.from_user, bot.get_me()), parse_mode='html', reply_markup=markup)
 
 @bot.message_handler(content_types=['text'])
 def get_text_messages(message):
@@ -53,7 +53,7 @@ def get_text_messages(message):
             vk_quote = random.choice(config.vk_quotes)
             bot.send_message(message.chat.id, vk_quote)
         elif message.text == '/help':
-            bot.send_message(message.chat.id, 'Я могу сгенерировать тебе случайный ник или статус, для этого нажми на кнопки внизу (^-^)')
+            bot.send_message(message.chat.id, 'Я могу сгенерировать тебе случайный ник, статус или аву, для этого нажми на кнопки внизу (^-^)')
         else:
             bot.send_message(message.chat.id, "Я тебя не понимаю =( Напиши /help")
 
