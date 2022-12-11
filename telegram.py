@@ -7,14 +7,11 @@ import logging
 import editor
 
 from telebot import types
+from config import fin_nick, replace_values
 
 bot = telebot.TeleBot(config.TOKEN)
 logger = telebot.logger
 telebot.logger.setLevel(logging.DEBUG)
-
-nick = ''
-fin_nick = ''
-replace_values = {"s": "$", "ч": "4", "с": "s", "д": "D"}
 
 @bot.message_handler(commands=["start"])
 def welcome(message):
